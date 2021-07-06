@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+/* import React,{Component} from 'react'
 import axios from 'axios'
 import { Link, withRouter } from "react-router-dom";
 import logo from '../media/logo.jpg';
@@ -77,9 +77,9 @@ class Login extends Component {
     }
 }
 
-export default withRouter(Login)  
-
-/*  import React,{useState} from 'react';
+export default withRouter(Login)   
+ */
+ import React,{useState} from 'react';
 import logo from '../media/logo.jpg'
 import { Link , withRouter} from 'react-router-dom';
 import axios from 'axios';
@@ -102,7 +102,7 @@ const Login = ({setUserInfo, history}) => {
 
      const  handleCloseModal = () => {
   
-       setShowModal(false)
+       setShowModal(showModal)
       }
    
 
@@ -112,10 +112,10 @@ const Login = ({setUserInfo, history}) => {
          email : userData.email,
          password : userData.password
      }).then(res => {
-         setUserInfo(res.data.useName)
+         setUserInfo(res.data.userName)
         history.push('/listBooks')
-        }).catch((error)=> {
-           setShowModal(true)
+        }).catch(()=> {
+           setShowModal(!showModal)
     })
 
     }
@@ -157,4 +157,4 @@ const Login = ({setUserInfo, history}) => {
     );
 };
 
-export default withRouter(Login);   */
+export default withRouter(Login);    

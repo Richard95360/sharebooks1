@@ -1,4 +1,4 @@
-import axios from 'axios';
+/* import axios from 'axios';
 import React,{ Component } from 'react'
 import { Link, withRouter } from "react-router-dom";
 import SimpleModal from './SimpleModal'
@@ -78,9 +78,9 @@ class AddUser extends Component {
   }
 }
 
-export default withRouter(AddUser) 
+export default withRouter(AddUser)   */
 
-/*  import React,{useState} from 'react';
+ import React,{useState} from 'react';
 import { Link, withRouter} from 'react-router-dom';
 import axios from 'axios';
 import SimpleModal from './SimpleModal'
@@ -101,7 +101,7 @@ const AddUser = ({setUserInfo, history}) => {
     }
 
    const  handleCloseModal = () => {
-      setShowModal(false)
+      setShowModal(showModal)
     }
 
       const  onSubmit = e =>{
@@ -112,7 +112,7 @@ const AddUser = ({setUserInfo, history}) => {
        .then(res => {
          setUserInfo(res.data.firstName +" "+ res.data.lastName)
          history.push("/listBooks");
-       }).catch(error => {
+       }).catch(() => {
         setShowModal(!showModal)
   
       })
@@ -163,5 +163,4 @@ const AddUser = ({setUserInfo, history}) => {
     )
     
 };
-
-export default withRouter(AddUser);   */
+export default withRouter(AddUser); 
