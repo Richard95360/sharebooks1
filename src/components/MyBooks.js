@@ -10,16 +10,12 @@ const MyBook = () => {
 
   const [showModal, setShowModal] = useState(false)
 
-  
-
   const fetchBooks = () => {
     axios.get('/books').then(response => {
       setMyBooks(response.data)
     })
   }
   
-  
-
   useEffect(() => {
     fetchBooks();
   }, [])
@@ -36,8 +32,6 @@ const MyBook = () => {
     setShowModal(false)
   }
 
-
-     
     return (
       <>
       <div>
