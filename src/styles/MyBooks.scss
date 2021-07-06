@@ -1,0 +1,21 @@
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.myBook-container {
+    margin-bottom: 25px;
+
+    .container-buttons{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    button {
+        width: 100px;
+        margin: 5px;
+    }
+
+
+}
