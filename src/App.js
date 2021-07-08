@@ -11,6 +11,7 @@ import Header from './components/Header'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
+
 function App  () {
 
   const [userInfo, setUserInfo] = useState('');
@@ -19,24 +20,15 @@ function App  () {
     <div>
       
     <BrowserRouter>
+    
     <div className="container">
        {!userInfo &&  <Redirect to="/login"/> }
        {userInfo &&  <Header userInfo={userInfo} setUserInfo={setUserInfo} /> }
-        <Route  path="/listBooks">
-          <ListBooks />
-        </Route>
-        <Route exact path="/myBooks">
-          <MyBooks />
-        </Route>
-        <Route exact path="/addBook">
-          <AddBook />
-        </Route>
-        <Route exact path="/addBook/:bookId">
-          <AddBook />
-        </Route>
-        <Route path="/myBorrows">
-          <MyBorrows />
-        </Route>
+        <Route  path="/listBooks" component={ListBooks}/>
+        <Route exact path="/myBooks" component={MyBooks} />
+        <Route exact path="/addBook" component={AddBook} />
+        <Route exact path="/addBook/:bookId" component={AddBook} />
+        <Route path="/myBorrows" component={MyBorrows} />
         <Route path="/login">
           <Login setUserInfo={setUserInfo} />
         </Route>

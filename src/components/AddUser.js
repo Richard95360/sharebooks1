@@ -6,7 +6,6 @@ import SimpleModal from './SimpleModal'
 
 const AddUser = ({setUserInfo, history}) => {
 
-  
    const [userState, setUserState] = useState({userData :{}, showModal:false})
 
     const handleChange = e => {
@@ -19,7 +18,7 @@ const AddUser = ({setUserInfo, history}) => {
       setUserState({ showModal:false })
     }
 
-      const  onSubmit = e =>{
+      const onSubmit = e =>{
         e.preventDefault();
        axios.post('/users' ,{
            ...userState.userData
