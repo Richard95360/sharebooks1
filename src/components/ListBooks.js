@@ -1,4 +1,4 @@
-
+/* 
 import React,{Component} from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
@@ -39,9 +39,9 @@ class ListBooks extends Component {
     </div>
   }
 }
-export default withRouter(ListBooks)
+export default withRouter(ListBooks) */
 
-/* import axios from 'axios';
+ import axios from 'axios';
 import React,{useState,useEffect} from 'react';
 import { withRouter, useHistory } from 'react-router';
 import Book from './Book';
@@ -60,7 +60,7 @@ const ListBooks = () => {
     useEffect(() => {
        axios.get('/books?status=FREE')
        .then(res => {
-         setBooks({books :res.data});
+         setBooks(res.data);
        })
     })
 
@@ -72,12 +72,12 @@ const borrowBook = (bookId) => {
 }
 
     return (
-     <div>
+    <div>
       <h1>Livres disponibles</h1>
       <div className="list-container">
         {books.length === 0 ? "Pas de livres disponibles" : null}
-        {books && books.filter(book => (<div className="list-book-container">
-          <Book title={book.title} category={book.category.label} lender={`${book.user.firstName} ${book.user.lastName}`}  />
+        {books.map(book => (<div className="list-book-container">
+        <Book title={book.title} category={book.category.label} lender={`${book.user.firstName} ${book.user.lastName}`} />
           <button className="btn btn-primary btn-sm" onClick={() => borrowBook(book.id)}>Emprunter</button>
         </div>
         ))}
@@ -87,4 +87,4 @@ const borrowBook = (bookId) => {
     );
 };
 
-export default withRouter(ListBooks); */
+export default withRouter(ListBooks); 
